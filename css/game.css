@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  margin-top: 50vh;
+  border-bottom: 5px solid #141414;
+}
+.player {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #fec63e;
+  margin-left: 45vh;
+  bottom: 0;
+}
+.scoreBoard {
+}
+.pulo {
+  animation: jump 0.5s linear;
+}
+.block {
+  display: block;
+  width: 50px;
+  height: 70px;
+  background-color: #141414;
+  position: absolute;
+  bottom: 0;
+  animation: animBlock 1.5s linear infinite;
+}
+.floor {
+  padding-bottom: 50vh;
+  background-color: #141414;
+}
+/* .delay {
+  animation-delay: 0.3s;
+} */
+
+@keyframes animBlock {
+  from {
+    right: -51px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    transform: rotate(180deg);
+    bottom: 150px;
+  }
+  100% {
+    transform: rotate(360deg);
+    bottom: 0;
+  }
+}

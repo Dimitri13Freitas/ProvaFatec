@@ -1,7 +1,6 @@
 .container {
   position: relative;
   margin-top: 50vh;
-  border-bottom: 5px solid #141414;
 }
 .player {
   position: absolute;
@@ -12,6 +11,38 @@
   bottom: 0;
 }
 .scoreBoard {
+  position: absolute;
+  top: 0;
+  z-index: 2000;
+}
+
+.rotateOne {
+  transform: rotate(45deg);
+}
+.rotateTwo {
+  transform: rotate(135deg);
+}
+.rotateThree {
+  transform: rotate(170deg);
+}
+.rotateFour {
+  transform: rotate(360deg);
+}
+
+.scoreBoard div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  background-color: #e4e3e3;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 0 0 5px;
+  padding: 10px 20px;
+}
+.rot {
+  transition: 5s;
 }
 .pulo {
   animation: jump 0.5s linear;
@@ -26,12 +57,13 @@
   animation: animBlock 1.5s linear infinite;
 }
 .floor {
-  padding-bottom: 50vh;
+  padding-bottom: 300vh;
+  padding: 300vw 0;
   background-color: #141414;
+  width: 300vw;
+  position: absolute;
+  left: -200px;
 }
-/* .delay {
-  animation-delay: 0.3s;
-} */
 
 @keyframes animBlock {
   from {

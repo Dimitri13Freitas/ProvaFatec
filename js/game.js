@@ -1,16 +1,42 @@
 const player = document.querySelector(".player");
 const block = document.querySelector(".block");
 const score = document.querySelector(".points");
+const highScore = document.querySelector(".high");
+const rot = document.querySelector(".rot");
+
 const blockHeight = block.getBoundingClientRect().height;
 const playerPosition = player.offsetLeft + 50;
 
+let blockPosition = null;
 let points = 0;
+let direction = 0;
+
+window.onload = () => {
+  if (window.localStorage.getItem("highScore")) {
+    highScore.innerText = window.localStorage.getItem("highScore");
+  }
+};
 
 function animEnd() {
   player.classList.remove("pulo");
-  console.log("ponto");
-  points++;
-  score.innerText = points;
+  if (blockPosition <= playerPosition) {
+    points++;
+    direction++;
+    if (direction === 5) {
+      rot.classList.remove("rotateFour");
+      rot.classList.add("rotateOne");
+    } else if (direction === 10) {
+      rot.classList.replace("rotateOne", "rotateTwo");
+    } else if (direction === 15) {
+      rot.classList.replace("rotateTwo", "rotateThree");
+    } else if (direction === 20) {
+      rot.classList.replace("rotateThree", "rotateFour");
+      direction = 0;
+    }
+    score.innerText = points;
+    if (points > window.localStorage.getItem("highScore"))
+      window.localStorage.setItem("highScore", points);
+  }
 }
 
 function pulo({ keyCode }) {
@@ -21,7 +47,7 @@ function pulo({ keyCode }) {
 }
 
 setInterval(() => {
-  const blockPosition = block.offsetLeft;
+  blockPosition = block.offsetLeft;
   const playerY = +window.getComputedStyle(player).bottom.replace("px", "");
   if (
     blockPosition <= playerPosition &&

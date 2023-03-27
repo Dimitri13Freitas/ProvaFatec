@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caluladora</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/calc.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="inputCalc">
+      <div class="calculo">
+        <p></p>
+        <h1></h1>
+      </div>
+    </div>
+    <div class="btnsCalc">
+      <div>
+        <button data-btn class="funcoes jsLimpaTudo" onclick="apagaTudo()"><img src="img/clean.svg"></button>
+        <button data-btn class="funcoes" value=" / "><img src="img/divisao.svg"></button>
+        <button data-btn class="funcoes" value=" * "><img src="img/multiplicacao.svg"></button>
+        <button data-btn class="funcoes jsApaga" onclick="apaga()"><img src="img/delete.svg"></button>
+        <button data-btn value="7">7</button>
+        <button data-btn value="8">8</button>
+        <button data-btn value="9">9</button>
+        <button data-btn class="funcoes" value=" - "><img src="img/subtracao.svg"></button>
+        <button data-btn value="4">4</button>
+        <button data-btn value="5">5</button>
+        <button data-btn value="6">6</button>
+        <button data-btn class="funcoes" value=" + "><img src="img/adicao.svg"></button>
+        <button data-btn value="1">1</button>
+        <button data-btn value="2">2</button>
+        <button data-btn value="3">3</button>
+        <button data-btn class="funcoes igual" onclick="resultadoFinal()"><img src="img/igual.svg"></button>
+        <button data-btn class="funcoes" onclick="porcentagem()"><img src="img/porcentagem.svg"></button>
+        <button data-btn value="0">0</button>
+        <button data-btn class="funcoes dot" value=".">.</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/calc.js"></script>
+</body>
+
+</html>

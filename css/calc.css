@@ -1,11 +1,8 @@
-/* Geral */
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
 }
-
-/* Containers */
 .container {
   display: flex;
   flex-direction: column;
@@ -13,8 +10,6 @@
   margin: 0 auto;
   margin-top: 55px;
 }
-
-/* Operação */
 .inputCalc {
   min-height: 118px;
   color: #f7f7f7;
@@ -36,8 +31,6 @@
 .inputCalc h1 {
   font-size: 2.5rem;
 }
-
-/* Operações e Numeros */
 .btnsCalc {
   width: 100%;
   background: #4d4d4d;

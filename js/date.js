@@ -1,9 +1,11 @@
 const data = document.querySelector(".completeDate");
-
+const dataNatal = document.querySelector(".natal");
 const date = new Date();
-
 const dia = date.getDate();
 const mes = date.getMonth() + 1;
 const ano = date.getFullYear();
-
 data.innerText = `${dia}/0${mes}/${ano}`;
+const natal = new Date(2023, 11, 25);
+const diferenca = natal.getTime() - date.getTime();
+const diasRestantes = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+dataNatal.innerText = `Faltam ${diasRestantes} dias para o Natal deste ano.`;
